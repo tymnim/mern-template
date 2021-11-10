@@ -3,8 +3,9 @@ import { MongoClient, ObjectId } from "mongodb";
 
 // Singleton class. Normally I want just one database for my applications.
 // Feel free to replace instance with instances object where dbs can be accessed by name.
-async function Database(url, name) {
+async function Database(name) {
   if (!Database.instance) {
+    const url = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/";
     Database.instance = await init(url, name);
   }
   return Database.instance;

@@ -3,7 +3,6 @@ import { sign, match } from "../auth.mjs";
 
 // basic login logic
 async function sayHi(headers, body, user) {
-  console.log(user)
   return {
     ...responses.ok,
     data: { msg: `hi, ${user.email}` }

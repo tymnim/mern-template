@@ -14,7 +14,7 @@ import { config } from "dotenv";
 config();
 
 async function main() {
-  await Database(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/", "test");
+  await Database("test");
 
   const app = express();
   const routes = router();
